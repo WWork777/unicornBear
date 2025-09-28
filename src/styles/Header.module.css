@@ -1,0 +1,228 @@
+.header {
+  position: relative;
+  width: 100%;
+  height: 185vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/2025-09-24T14-56-48.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Верхняя половина */
+.headerTop {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 80px;
+  color: white;
+}
+
+/* Нижняя половина */
+.headerBottom {
+  height: 85vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.sectionTitle {
+  font: 1em "Poppins-Medium", sans-serif;
+  line-height: 1.6;
+  font-size: 22px;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Сетка карточек */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.card {
+  border: 2px solid white;
+  border-radius: 16px;
+  padding: 24px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: #f97316;
+  color: #f97316;
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.25);
+}
+
+.sectionSubtitle {
+  font: 1em "Poppins-Bold", sans-serif;
+  line-height: 1.6;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f97316;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 16px;
+}
+
+.heroTitle {
+  font: 1em "Poppins-Bold", sans-serif;
+  line-height: 1.3;
+  font-size: 36px;
+  font-weight: bold;
+  color: #f97316;
+  max-width: 900px;
+}
+
+.cta {
+  font: 1em "Poppins-Regular", sans-serif;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0);
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta:hover {
+  border-radius: 100px;
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.cardIcon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.sectionWhy {
+  width: 100%;
+  height: 15vh;
+  color: #f97316;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .cards {
+    max-width: 600px;
+    gap: 20px;
+  }
+
+  .card {
+    font-size: 14px;
+    padding: 14px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 22px;
+  }
+
+  .cta {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr; /* одна колонка */
+    gap: 16px;
+    padding: 0 20px;
+  }
+
+  .card {
+    font-size: 16px;
+    padding: 20px 24px;
+  }
+
+  .cardIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 18px;
+  }
+
+  .cta {
+    width: 100%;
+    max-width: 280px;
+    font-size: 14px;
+  }
+
+  .card {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+
+  .cardIcon {
+    width: 18px;
+    height: 18px;
+  }
+}

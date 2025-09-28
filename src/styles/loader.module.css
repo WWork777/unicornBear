@@ -1,0 +1,67 @@
+.loaderWrap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: #fff;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loaderInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo {
+  animation: rotate 1.6s linear infinite;
+}
+
+.ring {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 60;
+  transform-origin: 50% 50%;
+  animation: dash 1.6s ease-in-out infinite, spin 3.2s linear infinite;
+}
+
+.dot {
+  transform-origin: 50% 50%;
+  animation: pop 1.4s ease-in-out infinite;
+}
+
+.text {
+  font-family: 'Poppins-Bold', sans-serif;
+  letter-spacing: 4px;
+  font-weight: 700;
+  color: #f97316;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dash {
+  0% { stroke-dashoffset: 220; }
+  50% { stroke-dashoffset: 60; }
+  100% { stroke-dashoffset: 220; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.6); }
+}
